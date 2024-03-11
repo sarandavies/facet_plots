@@ -43,7 +43,7 @@ grid
 
 ggarrange(simple, grid, nrow = 2)
 
-## At this stage they're identical. However, if we want to have free y axes, then we can only use facet_wrap with the argument 'scales = 'free_y'
+## At this stage they're identical. However, if we want to have free y axes, then we can use facet_wrap with the argument 'scales = 'free_y'
 
 simple_free <- ggplot(iris, aes(x=Sepal.Length, y =Sepal.Width, color = Species))+
   geom_point()+
@@ -56,7 +56,7 @@ simple_free <- ggplot(iris, aes(x=Sepal.Length, y =Sepal.Width, color = Species)
 ggarrange(simple, simple_free, nrow = 2)
 
 # 2) Adding check marks
-## Since our plots don't have grid lines, comparing the y axes across multiple panels can be tricky this can be helped by using facet_rep_wrap from the 'lemon' package
+## Since our plots don't have grid lines, comparing the y axes across multiple panels can be tricky. This can be helped by using facet_rep_wrap from the 'lemon' package
 
 tick_marks <- ggplot(iris, aes(x=Sepal.Length, y =Sepal.Width, color=Species))+
   geom_point()+
